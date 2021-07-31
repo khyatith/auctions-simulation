@@ -105,59 +105,59 @@ function Map({ teams }) {
     }
 
     return (
-        <div>
-            <ReactMapGL
-              {...viewport}
-              mapboxApiAccessToken="pk.eyJ1IjoidmFydW5zYWNoZGV2YSIsImEiOiJja3F1azYxeHowNWQwMm9vMXpsNzFjZzdnIn0.vnKW75YqDHPdsKyoEH4BdA"
-              mapStyle="mapbox://styles/varunsachdeva/ckqukbhxy6dr418qsh529bunr">
-              {renderPins.map(artifact => {
-                  const isSelectedArtifact = selectedArtifact && artifact.id === selectedArtifact.id;
-                  const allAuctionedData = window.sessionStorage.getItem("auctionedArtifacts") || auctionedArtifacts;
-                  const isRenderArtifact = !allAuctionedData.includes(artifact.id);
-                  return (
-                    <Marker key={artifact.name} latitude={artifact.geometry.coordinates[1]} longitude={artifact.geometry.coordinates[0]}>
-                      <svg
-                        height={SIZE}
-                        viewBox="0 0 24 24"
-                        style={{
-                            cursor: "pointer",
-                            fill: !isRenderArtifact ? '#ccc' : (isSelectedArtifact ? "#000" : "#d00"),
-                            stroke: "rgba(0, 0, 0, 0.40)",
-                            transform: `translate(${-SIZE / 2}px,${-SIZE}px)`,
-                            zIndex: "1000",
-                        }}
-                        onClick={e => {
-                            e.preventDefault();
-                            setSelectedArtifact(artifact);
-                        }}>
-                        <path d={ICON} />
-                      </svg>
-                    </Marker>
-                  );
-                })}
-                <div style={{display: 'inline'}}>
-                  <TeamsDropdown teams={allTeams} updateCurrentTeamOnMap={updateCurrentTeamOnMap} />
-                  <AirportNPC currentTeamId={currentTeam} updateAmtForTeam={updateAmtForTeam} teams={allTeams} />
-                  <div style={{margin: '0 25%'}}>
-                    <CustomizedButton buttontext={"Sell/Buy from the expert"} buttonColor={'#794614'} onClick={setOpenMarketExpert} />
-                  </div>
-                </div>
-                <RulesCard />
-                <Leaderboardchart teams={allTeams} currentTeam={currentTeam} />
-                {selectedArtifact ?
-                  <CardPopup
-                    selectedArtifact={selectedArtifact}
-                    handleCloseArtifact={handleCloseArtifact}
-                    setAuctionedArtifact={setAuctionedArtifact}
-                    updateAmtForTeam={updateAmtForTeam}
-                    updateArtifactNumberForTeams={updateArtifactNumberForTeams}
-                    teams={allTeams}
-                  /> : null}
-                {openMarketExpert && <CustomizedModal open={openMarketExpert} setOpenModal={setOpenMarketExpert}>
-                  <MarketExpertModal teams={allTeams} updateAmtForTeam={updateAmtForTeam} updateArtifactNumberForTeams={updateArtifactNumberForTeams} />
-                </CustomizedModal> }
-            </ReactMapGL>
-        </div>
+      <div>
+        <ReactMapGL
+          {...viewport}
+          mapboxApiAccessToken="pk.eyJ1IjoidmFydW5zYWNoZGV2YSIsImEiOiJja3F1azYxeHowNWQwMm9vMXpsNzFjZzdnIn0.vnKW75YqDHPdsKyoEH4BdA"
+          mapStyle="mapbox://styles/varunsachdeva/ckqukbhxy6dr418qsh529bunr">
+          {renderPins.map(artifact => {
+              const isSelectedArtifact = selectedArtifact && artifact.id === selectedArtifact.id;
+              const allAuctionedData = window.sessionStorage.getItem("auctionedArtifacts") || auctionedArtifacts;
+              const isRenderArtifact = !allAuctionedData.includes(artifact.id);
+              return (
+                <Marker key={artifact.name} latitude={artifact.geometry.coordinates[1]} longitude={artifact.geometry.coordinates[0]}>
+                  <svg
+                    height={SIZE}
+                    viewBox="0 0 24 24"
+                    style={{
+                        cursor: "pointer",
+                        fill: !isRenderArtifact ? '#ccc' : (isSelectedArtifact ? "#000" : "#d00"),
+                        stroke: "rgba(0, 0, 0, 0.40)",
+                        transform: `translate(${-SIZE / 2}px,${-SIZE}px)`,
+                        zIndex: "1000",
+                    }}
+                    onClick={e => {
+                        e.preventDefault();
+                        setSelectedArtifact(artifact);
+                    }}>
+                    <path d={ICON} />
+                  </svg>
+                </Marker>
+              );
+            })}
+            <div style={{display: 'inline'}}>
+              <TeamsDropdown teams={allTeams} updateCurrentTeamOnMap={updateCurrentTeamOnMap} />
+              <AirportNPC currentTeamId={currentTeam} updateAmtForTeam={updateAmtForTeam} teams={allTeams} />
+              <div style={{margin: '0 25%'}}>
+                <CustomizedButton buttontext={"Sell/Buy from the expert"} buttoncolor={'#794614'} onClick={setOpenMarketExpert} />
+              </div>
+            </div>
+            <RulesCard />
+            <Leaderboardchart teams={allTeams} currentTeam={currentTeam} />
+            {selectedArtifact ?
+              <CardPopup
+                selectedArtifact={selectedArtifact}
+                handleCloseArtifact={handleCloseArtifact}
+                setAuctionedArtifact={setAuctionedArtifact}
+                updateAmtForTeam={updateAmtForTeam}
+                updateArtifactNumberForTeams={updateArtifactNumberForTeams}
+                teams={allTeams}
+              /> : null}
+            {openMarketExpert && <CustomizedModal open={openMarketExpert} setOpenModal={setOpenMarketExpert}>
+              <MarketExpertModal teams={allTeams} updateAmtForTeam={updateAmtForTeam} updateArtifactNumberForTeams={updateArtifactNumberForTeams} />
+            </CustomizedModal> }
+        </ReactMapGL>
+      </div>
     );
 }
 

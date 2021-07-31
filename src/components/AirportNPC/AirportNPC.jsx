@@ -90,7 +90,7 @@ function AirportNPC({ updateAmtForTeam, currentTeamId, teams }) {
 	const handleClick = () => {
     const { departure, arrival } = flightData;
     if (departure && arrival) {
-      artifactData.artifacts.map(artifact => {
+      artifactData.artifacts.forEach(artifact => {
         if (artifact.country === departure) {
           setDepartureCoordinates(artifact.geometry.coordinates);
         } else if (artifact.country === arrival) {
@@ -105,7 +105,7 @@ function AirportNPC({ updateAmtForTeam, currentTeamId, teams }) {
     let departurecoords;
     let arrivalcoords;
     try {
-      artifactData.artifacts.map(artifact => {
+      artifactData.artifacts.forEach(artifact => {
         const geom = artifact.geometry.coordinates;
         if (artifact.country === departure) {
           departurecoords = geom;
@@ -127,6 +127,7 @@ function AirportNPC({ updateAmtForTeam, currentTeamId, teams }) {
       } else if (!departure) {
         console.log('error', 'Check departure country');
       } else {
+        console.log('error', error);
         console.log('error');
       }
     }

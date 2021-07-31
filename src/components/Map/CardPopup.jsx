@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -27,7 +27,7 @@ const auctionTypeMapping = [{
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 345,
+    width: 400,
     float: "left",
     top: 0,
     position: 'absolute'
@@ -62,12 +62,10 @@ const CardPopup = ({ selectedArtifact, handleCloseArtifact, setAuctionedArtifact
     <>
       {!openModal && <Card className={classes.root}>
         <CardHeader
-          title={selectedArtifact.name}
-          subheader={`${selectedArtifact.country}, ${selectedArtifact.region}`}
           action={
-              <IconButton aria-label="close" onClick={handleCloseArtifact}>
-                <CloseIcon />
-              </IconButton>
+            <IconButton aria-label="close" onClick={handleCloseArtifact}>
+              <CloseIcon />
+            </IconButton>
           }
         />
         <CardMedia
@@ -78,14 +76,12 @@ const CardPopup = ({ selectedArtifact, handleCloseArtifact, setAuctionedArtifact
           title={selectedArtifact.name}
         />
         <CardContent>
-          <Typography variant="subtitle2" style={{fontWeight: '700',lineHeight: '2'}}>
-            {selectedArtifact.bodyType}
+          <Typography variant="h6" component="h2">
+            <p>{selectedArtifact.name}<br/>
+              <span>{selectedArtifact.artist}, {selectedArtifact.dateCreated}</span>
+            </p>
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {selectedArtifact.description}
-          </Typography>
-          <br/>
-          <Typography variant="subtitle">
+          <Typography>
             Beginning Price : {currency(selectedArtifact.originalValue, { pattern: "# " }).format()}
           </Typography>
         </CardContent>

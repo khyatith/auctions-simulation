@@ -149,7 +149,7 @@ export default function MarketExpertModal({ updateAmtForTeam, teams, updateArtif
             </NativeSelect>
             <TextField className={classes.form} size="small" name="Total" placeholder="Price from market expert" variant="outlined" value={convertedPrice} />
             <CustomizedButton buttontext={'Tell me the price!'}  onClick={goToMarketExpert} />
-            <CustomizedButton buttontext={playerAction === '0' ? 'Buy the car' : 'Sell the car'} buttonColor={'green'}  onClick={makeTheDeal} />
+            <CustomizedButton buttontext={playerAction === '0' ? 'Buy the car' : 'Sell the car'} buttoncolor={'green'}  onClick={makeTheDeal} />
         </CardContent>
       </Card>
     </div>

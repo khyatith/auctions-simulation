@@ -32,31 +32,31 @@ function RulesCard() {
     };
 
     return (
-        <Card className={classes.root} id="rules">
-            <CardHeader
-                title="Rules"
-                action={
-                    <IconButton
-                        className={clsx(classes.expand, {
-                            [classes.expandOpen]: true,
-                        })}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}
-                        aria-label="show more">
-                        <ExpandMoreIcon />
-                    </IconButton>
-                }></CardHeader>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        You can do 3 moves in each turn. You need to choose between -
-                        <p style={{color: 'purple', fontWeight: '700', fontSize: '20px'}}>Buy</p>
-                        <p style={{color: 'purple', fontWeight: '700', fontSize: '20px'}}>Sell</p>
-                        <p style={{color: 'purple', fontWeight: '700', fontSize: '20px'}}>Travel upto 2 times</p>
-                    </Typography>
-                </CardContent>
-            </Collapse>
-        </Card>
+      <Card className={classes.root} id="rules">
+        <CardHeader
+            title="Rules"
+            action={
+                <IconButton
+                    className={clsx(classes.expand, {
+                        [classes.expandOpen]: true,
+                    })}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more">
+                    <ExpandMoreIcon />
+                </IconButton>
+            }></CardHeader>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography variant="body2" color="textSecondary">
+              You can do 3 moves in each turn. You need to choose between -
+              <p style={{color: 'purple', fontWeight: '700', fontSize: '20px'}}>Buy</p>
+              <p style={{color: 'purple', fontWeight: '700', fontSize: '20px'}}>Sell</p>
+              <p style={{color: 'purple', fontWeight: '700', fontSize: '20px'}}>Travel upto 2 times</p>
+            </Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
     );
 }
 
