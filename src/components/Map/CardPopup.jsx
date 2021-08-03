@@ -58,6 +58,11 @@ const CardPopup = ({ selectedArtifact, handleCloseArtifact, setAuctionedArtifact
     return <Component artifact={selectedArtifact} setAuctionedArtifact={setAuctionedArtifact} teams={teams} updateAmtForTeam={updateAmtForTeam} updateArtifactNumberForTeams={updateArtifactNumberForTeams} />
   }
 
+  const openImage = () => {
+    console.log('inside');
+    window.open(`${selectedArtifact.imageURL}`);
+  }
+
   return (
     <>
       {!openModal && <Card className={classes.root}>
@@ -68,13 +73,15 @@ const CardPopup = ({ selectedArtifact, handleCloseArtifact, setAuctionedArtifact
             </IconButton>
           }
         />
-        <CardMedia
-          className={classes.media}
-          component="img"
-          height="350px"
-          image={selectedArtifact.imageURL}
-          title={selectedArtifact.name}
-        />
+        <div onClick={openImage}>
+          <CardMedia
+            className={classes.media}
+            component="img"
+            height="350px"
+            image={selectedArtifact.imageURL}
+            title={selectedArtifact.name}
+          />
+        </div>
         <CardContent>
           <Typography variant="h6" component="h2">
             <p>{selectedArtifact.name}<br/>

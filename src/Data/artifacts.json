@@ -249,12 +249,12 @@
   },
   {
     "id": 14,
-    "name": "Borobudur and the Sun",
+    "name": "Mahabharata",
     "region": "Asia",
     "country": "Indonesia",
-    "dateCreated": "1984",
-    "artist": "Affandi",
-    "imageURL": "https://firebasestorage.googleapis.com/v0/b/auctions-f601d.appspot.com/o/Art%2FBorobudur-and-the-sun.jpeg?alt=media&token=d9eff116-fc11-4890-b1d2-2034bc60b3b6",
+    "dateCreated": "1948",
+    "artist": "M.F. Husain",
+    "imageURL": "https://firebasestorage.googleapis.com/v0/b/auctions-f601d.appspot.com/o/Art%2FMahabhartha.jpeg?alt=media&token=bafeb231-6606-4206-960b-32ec9c733b87",
     "geometry": {
         "type": "Point",
         "coordinates": [113, -1]
