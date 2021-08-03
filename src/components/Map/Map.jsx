@@ -39,7 +39,7 @@ function Map({ teams }) {
 
       const listener = e => {
         if (e.key === "Escape") {
-            setSelectedArtifact(null);
+          setSelectedArtifact(null);
         }
       };
       window.addEventListener("keydown", listener);
@@ -82,6 +82,7 @@ function Map({ teams }) {
         }
         return acc;
       }, []);
+      console.log('updatedTeams', updatedTeams);
       setAllTeams(updatedTeams);
     }
 
@@ -142,7 +143,7 @@ function Map({ teams }) {
                 <CustomizedButton buttontext={"Sell/Buy from the expert"} buttoncolor={'#794614'} onClick={setOpenMarketExpert} />
               </div>
             </div>
-            <RulesCard />
+            <RulesCard teams={allTeams} updateAmtForTeam={updateAmtForTeam} updateArtifactNumberForTeams={updateArtifactNumberForTeams} />
             <Leaderboardchart teams={allTeams} currentTeam={currentTeam} />
             {selectedArtifact ?
               <CardPopup

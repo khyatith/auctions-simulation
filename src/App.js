@@ -7,22 +7,22 @@ const teams = [{
 	id: 1,
 	name: 'blue',
 	color: blue[500],
-	initialAmt: 100000,
-	currentAmt: 100000,
+	initialAmt: 200000,
+	currentAmt: 200000,
 	numberOfCars: 0,
 },{
 	id: 2,
 	name: 'green',
 	color: green[500],
-	initialAmt: 100000,
-	currentAmt: 100000,
+	initialAmt: 200000,
+	currentAmt: 200000,
 	numberOfCars: 0,
 },{
 	id: 3,
 	name: 'yellow',
 	color: yellow[500],
-	initialAmt: 100000,
-	currentAmt: 100000,
+	initialAmt: 200000,
+	currentAmt: 200000,
 	numberOfCars: 0,
 }];
 

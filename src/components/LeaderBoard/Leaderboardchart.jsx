@@ -54,12 +54,10 @@ const Leaderboardchart = ({ teams }) => {
       }
       return acc;
     }, []);
-    finalData.unshift('Number of cars');
+    finalData.unshift('Number of paintings');
     data.push(finalData);
     setNumberOfCarsData(data);
   }, [teams])
-
-  console.log('data after use effect', barChartData)
 
   return (
   <div className={classes.root}>

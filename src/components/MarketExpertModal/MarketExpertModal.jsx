@@ -107,7 +107,6 @@ export default function MarketExpertModal({ updateAmtForTeam, teams, updateArtif
       if (id === parseInt(selectedTeam) && playerAction === '0') {
         updatedAmt = parseInt(currentAmt) - parseInt(finalPrice);
         totalCars = parseInt(numberOfCars) + 1;
-        console.log('totalCars in buying', totalCars);
       } else if (id === parseInt(selectedTeam) && playerAction === '1') {
         updatedAmt = parseInt(currentAmt) + parseInt(finalPrice);
         totalCars = parseInt(numberOfCars) <= 0 ? 0 : Math.abs(parseInt(numberOfCars) - 1);
@@ -142,14 +141,14 @@ export default function MarketExpertModal({ updateAmtForTeam, teams, updateArtif
               input={<BootstrapInput />}
               className={classes.select}
             >
-              <option aria-label="Select Car" value="">--Select Car--</option>
+              <option aria-label="Select Art" value="">--Select Art--</option>
               {artifactData.artifacts.map(car => {
                 return <option key={car.id} value={car.id}>{car.name}</option>
               })}
             </NativeSelect>
             <TextField className={classes.form} size="small" name="Total" placeholder="Price from market expert" variant="outlined" value={convertedPrice} />
             <CustomizedButton buttontext={'Tell me the price!'}  onClick={goToMarketExpert} />
-            <CustomizedButton buttontext={playerAction === '0' ? 'Buy the car' : 'Sell the car'} buttoncolor={'green'}  onClick={makeTheDeal} />
+            <CustomizedButton buttontext={playerAction === '0' ? 'Buy Art' : 'Sell Art'} buttoncolor={'green'}  onClick={makeTheDeal} />
         </CardContent>
       </Card>
     </div>
