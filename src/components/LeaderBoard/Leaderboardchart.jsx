@@ -58,7 +58,7 @@ const Leaderboardchart = ({ teams }) => {
     data.push(finalData);
     setNumberOfCarsData(data);
   }, [teams])
-
+  console.log('teams in leaderboard', teams);
   return (
   <div className={classes.root}>
     <div className={classes.chart1}>

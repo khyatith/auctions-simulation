@@ -78,7 +78,7 @@ function AirportNPC({ updateAmtForTeam, currentTeamId, teams }) {
       }
     })
     updateAmtForTeam(updatedAmt, currentTeamId);
-	}, [departureCoordinates, arrivalCoordinates]);
+	}, [departureCoordinates, arrivalCoordinates, currentTeamId]);
 
 	const handleChange = event => {
     const { name, value } = event.target;

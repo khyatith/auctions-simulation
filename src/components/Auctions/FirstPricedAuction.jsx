@@ -31,10 +31,10 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-export default function FirstPricedAuction({ artifact, setAuctionedArtifact, updateAmtForTeam, updateArtifactNumberForTeams, teams }) {
+export default function FirstPricedAuction({ artifact, setAuctionedArtifact, updateAmtForTeam, updateArtifactNumberForTeams, teams, setOpenModal }) {
 	const classes = useStyles();
 	const time = new Date();
-  time.setSeconds(time.getSeconds() + 150);
+  time.setSeconds(time.getSeconds() + 60);
   const [winningTeamId, setWinningTeam] = useState();
   const[winningAuctionValue, setWinningAuctionValue] = useState();
 
@@ -66,6 +66,7 @@ export default function FirstPricedAuction({ artifact, setAuctionedArtifact, upd
     setAuctionedArtifact();
     updateAmtForTeam(updatedAmt, winningTeamId);
     updateArtifactNumberForTeams(totalCarsForTeam, winningTeamId);
+    setOpenModal(false);
   }
 
   const updateAuctionAmtValue = (e) => {

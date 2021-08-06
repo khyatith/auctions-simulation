@@ -55,7 +55,7 @@ const CardPopup = ({ selectedArtifact, handleCloseArtifact, setAuctionedArtifact
       }
       return acc;
     }, '');
-    return <Component artifact={selectedArtifact} setAuctionedArtifact={setAuctionedArtifact} teams={teams} updateAmtForTeam={updateAmtForTeam} updateArtifactNumberForTeams={updateArtifactNumberForTeams} />
+    return <Component artifact={selectedArtifact} setAuctionedArtifact={setAuctionedArtifact} teams={teams} updateAmtForTeam={updateAmtForTeam} updateArtifactNumberForTeams={updateArtifactNumberForTeams} setOpenModal={setOpenModal} />
   }
 
   const openImage = () => {
